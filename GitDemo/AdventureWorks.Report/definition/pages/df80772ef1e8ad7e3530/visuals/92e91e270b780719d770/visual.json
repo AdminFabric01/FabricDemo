@@ -1,0 +1,136 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "name": "92e91e270b780719d770",
+  "position": {
+    "x": 9.4488915545918015,
+    "y": 0,
+    "z": 0,
+    "height": 682.20997024152814,
+    "width": 1148.9852130383631,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "HumanResources vEmployee"
+                    }
+                  },
+                  "Property": "FirstName"
+                }
+              },
+              "queryRef": "HumanResources vEmployee.FirstName",
+              "nativeQueryRef": "FirstName"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "HumanResources vEmployee"
+                    }
+                  },
+                  "Property": "LastName"
+                }
+              },
+              "queryRef": "HumanResources vEmployee.LastName",
+              "nativeQueryRef": "LastName"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "HumanResources vEmployee"
+                    }
+                  },
+                  "Property": "AddressLine1"
+                }
+              },
+              "queryRef": "HumanResources vEmployee.AddressLine1",
+              "nativeQueryRef": "AddressLine1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "HumanResources vEmployee"
+                    }
+                  },
+                  "Property": "City"
+                }
+              },
+              "queryRef": "HumanResources vEmployee.City",
+              "nativeQueryRef": "City"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "HumanResources vEmployee"
+                    }
+                  },
+                  "Property": "CountryRegionName"
+                }
+              },
+              "queryRef": "HumanResources vEmployee.CountryRegionName",
+              "nativeQueryRef": "CountryRegionName"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "HumanResources vEmployee"
+                    }
+                  },
+                  "Property": "EmailAddress"
+                }
+              },
+              "queryRef": "HumanResources vEmployee.EmailAddress",
+              "nativeQueryRef": "EmailAddress"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "HumanResources vEmployee"
+                    }
+                  },
+                  "Property": "BusinessEntityID"
+                }
+              },
+              "queryRef": "HumanResources vEmployee.BusinessEntityID",
+              "nativeQueryRef": "BusinessEntityID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "HumanResources vEmployee"
+                    }
+                  },
+                  "Property": "JobTitle"
+                }
+              },
+              "queryRef": "HumanResources vEmployee.JobTitle",
+              "nativeQueryRef": "JobTitle"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
