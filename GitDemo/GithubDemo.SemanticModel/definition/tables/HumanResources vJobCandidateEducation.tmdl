@@ -1,0 +1,132 @@
+table 'HumanResources vJobCandidateEducation'
+	lineageTag: d50413d7-9bcc-4174-ba6c-0f762e74bbed
+
+	column JobCandidateID
+		dataType: int64
+		formatString: 0
+		lineageTag: eaa7e2c5-fd10-4338-a5e5-38f4eddebe20
+		summarizeBy: none
+		sourceColumn: JobCandidateID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Edu.Level'
+		dataType: string
+		lineageTag: e508a5a7-4066-4468-8596-a5396b5d40d5
+		summarizeBy: none
+		sourceColumn: Edu.Level
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Edu.StartDate'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fcfc1152-b6e6-40dd-9f11-73f5160c1387
+		summarizeBy: none
+		sourceColumn: Edu.StartDate
+
+		variation Variation
+			isDefault
+			relationship: e8e1b53f-2f35-4c64-8995-9a230512ec9f
+			defaultHierarchy: LocalDateTable_a503e9ee-1d8a-4dc6-a395-a36833c3b476.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Edu.EndDate'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 48221c0c-f55c-4d38-96d4-387256359826
+		summarizeBy: none
+		sourceColumn: Edu.EndDate
+
+		variation Variation
+			isDefault
+			relationship: 5e4b67f3-f59b-40d5-9583-c95efa3c1c57
+			defaultHierarchy: LocalDateTable_c591c060-a30a-4e58-babc-7f6667be5b81.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Edu.Degree'
+		dataType: string
+		lineageTag: d80cfc23-c4ba-4ba8-af24-911814e612fb
+		summarizeBy: none
+		sourceColumn: Edu.Degree
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Edu.Major'
+		dataType: string
+		lineageTag: 23dc3514-6ce9-47b0-a1d7-d1447e2731e2
+		summarizeBy: none
+		sourceColumn: Edu.Major
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Edu.Minor'
+		dataType: string
+		lineageTag: b42c16ad-9e49-4a94-9c68-a43786ea0472
+		summarizeBy: none
+		sourceColumn: Edu.Minor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Edu.GPA'
+		dataType: string
+		lineageTag: 2bb717d1-8fba-4b35-bd0a-3c840f90d6d8
+		summarizeBy: none
+		sourceColumn: Edu.GPA
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Edu.GPAScale'
+		dataType: string
+		lineageTag: c61a4264-57fa-4b0f-9fa0-b47ee49ae8c6
+		summarizeBy: none
+		sourceColumn: Edu.GPAScale
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Edu.School'
+		dataType: string
+		lineageTag: 23b906d6-426c-4048-b0be-4c96ed441fe6
+		summarizeBy: none
+		sourceColumn: Edu.School
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Edu.Loc.CountryRegion'
+		dataType: string
+		lineageTag: f0be5bc7-3c42-46eb-acf4-c51d54e86ce1
+		summarizeBy: none
+		sourceColumn: Edu.Loc.CountryRegion
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Edu.Loc.State'
+		dataType: string
+		lineageTag: f1629bad-9294-4e69-a51c-3cd76f915413
+		summarizeBy: none
+		sourceColumn: Edu.Loc.State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Edu.Loc.City'
+		dataType: string
+		lineageTag: 55046bc4-a200-4693-9f0d-9652328d4d96
+		summarizeBy: none
+		sourceColumn: Edu.Loc.City
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'HumanResources vJobCandidateEducation' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("localhost\SQLEXPRESS"),
+				    AdventureWorks2019 = Source{[Name="AdventureWorks2019"]}[Data],
+				    HumanResources_vJobCandidateEducation = AdventureWorks2019{[Schema="HumanResources",Item="vJobCandidateEducation"]}[Data]
+				in
+				    HumanResources_vJobCandidateEducation
+
+	annotation PBI_ResultType = Table
+

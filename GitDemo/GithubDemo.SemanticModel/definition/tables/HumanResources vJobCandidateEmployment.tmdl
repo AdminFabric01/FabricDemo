@@ -1,0 +1,116 @@
+table 'HumanResources vJobCandidateEmployment'
+	lineageTag: 7fbbf956-74b3-41ba-b804-2c96902509a5
+
+	column JobCandidateID
+		dataType: int64
+		formatString: 0
+		lineageTag: 749f553e-5a94-4ab5-b1f8-7e9e11916f21
+		summarizeBy: none
+		sourceColumn: JobCandidateID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Emp.StartDate'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 11106778-d5ec-473e-8c24-c28c3a71c5fd
+		summarizeBy: none
+		sourceColumn: Emp.StartDate
+
+		variation Variation
+			isDefault
+			relationship: bcd22f04-551e-4c2b-8b61-28f5d0de7eb4
+			defaultHierarchy: LocalDateTable_04503ca7-07d2-436d-8af4-4691ae97b88d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Emp.EndDate'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 214dbdf3-e6e6-4357-83b7-bc55a7669f99
+		summarizeBy: none
+		sourceColumn: Emp.EndDate
+
+		variation Variation
+			isDefault
+			relationship: 90ff4bea-23a8-412b-9d78-5d52e84d1251
+			defaultHierarchy: LocalDateTable_a3bd4c02-ddef-4f16-aa25-3f733592e7b2.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Emp.OrgName'
+		dataType: string
+		lineageTag: f942161b-a573-4a34-899a-610099fc91db
+		summarizeBy: none
+		sourceColumn: Emp.OrgName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Emp.JobTitle'
+		dataType: string
+		lineageTag: a0bf6ffe-aaf5-4292-9760-a02eccf5e7fb
+		summarizeBy: none
+		sourceColumn: Emp.JobTitle
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Emp.Responsibility'
+		dataType: string
+		lineageTag: 726148ca-9251-44fa-bc0e-208f7e13f020
+		summarizeBy: none
+		sourceColumn: Emp.Responsibility
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Emp.FunctionCategory'
+		dataType: string
+		lineageTag: 681c4d2d-8a96-40e6-a21d-ab306ee299ae
+		summarizeBy: none
+		sourceColumn: Emp.FunctionCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Emp.IndustryCategory'
+		dataType: string
+		lineageTag: 5253e930-9e04-4755-95bb-2f2f371d73ad
+		summarizeBy: none
+		sourceColumn: Emp.IndustryCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Emp.Loc.CountryRegion'
+		dataType: string
+		lineageTag: 0a4ea7de-74e9-4eab-acd3-835b09a20721
+		summarizeBy: none
+		sourceColumn: Emp.Loc.CountryRegion
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Emp.Loc.State'
+		dataType: string
+		lineageTag: 7b873958-907c-4ae0-95ae-8a6ddf31aefe
+		summarizeBy: none
+		sourceColumn: Emp.Loc.State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Emp.Loc.City'
+		dataType: string
+		lineageTag: 4eb5d828-1014-4b4b-b229-b66718db6d09
+		summarizeBy: none
+		sourceColumn: Emp.Loc.City
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'HumanResources vJobCandidateEmployment' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("localhost\SQLEXPRESS"),
+				    AdventureWorks2019 = Source{[Name="AdventureWorks2019"]}[Data],
+				    HumanResources_vJobCandidateEmployment = AdventureWorks2019{[Schema="HumanResources",Item="vJobCandidateEmployment"]}[Data]
+				in
+				    HumanResources_vJobCandidateEmployment
+
+	annotation PBI_ResultType = Table
+

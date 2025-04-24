@@ -1,0 +1,100 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 339.9016170242802,
+            "y": 307.25802352921357
+          },
+          "nodeIndex": "HumanResources vEmployee",
+          "nodeLineageTag": "06dd5e39-02d4-4e94-aeb7-e5bb44a74190",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 523.54858088394735,
+            "y": -50
+          },
+          "nodeIndex": "HumanResources vEmployeeDepartment",
+          "nodeLineageTag": "b8b38d4e-fd5c-4884-97a8-d03107ad6bbe",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50.000000000000014,
+            "y": 100.03782512428575
+          },
+          "nodeIndex": "HumanResources vEmployeeDepartmentHistory",
+          "nodeLineageTag": "947a4e24-c934-4bf7-b933-1154da913a21",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 434.56543222712713,
+            "y": 664.56669314100918
+          },
+          "nodeIndex": "HumanResources vJobCandidate",
+          "nodeLineageTag": "be4476fe-af87-42c5-bfd9-d6295d26ebcb",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 722.89143493376423,
+            "y": 664.80408821433377
+          },
+          "nodeIndex": "HumanResources vJobCandidateEducation",
+          "nodeLineageTag": "d50413d7-9bcc-4174-ba6c-0f762e74bbed",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 214.31793882128375,
+            "y": 1018.0336258891796
+          },
+          "nodeIndex": "HumanResources vJobCandidateEmployment",
+          "nodeLineageTag": "7fbbf956-74b3-41ba-b804-2c96902509a5",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

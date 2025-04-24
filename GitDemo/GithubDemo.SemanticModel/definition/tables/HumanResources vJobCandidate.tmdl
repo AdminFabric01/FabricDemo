@@ -1,0 +1,151 @@
+table 'HumanResources vJobCandidate'
+	lineageTag: be4476fe-af87-42c5-bfd9-d6295d26ebcb
+
+	column JobCandidateID
+		dataType: int64
+		formatString: 0
+		lineageTag: cca161ef-9fde-452b-947a-fef6c2653193
+		summarizeBy: none
+		sourceColumn: JobCandidateID
+
+		annotation SummarizationSetBy = Automatic
+
+	column BusinessEntityID
+		dataType: int64
+		formatString: 0
+		lineageTag: 2a2e4b21-7149-4193-94af-a2044eb6e362
+		summarizeBy: none
+		sourceColumn: BusinessEntityID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Name.Prefix'
+		dataType: string
+		lineageTag: f4eb2f6a-d8e8-4543-9b11-dea3f7465dc4
+		summarizeBy: none
+		sourceColumn: Name.Prefix
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Name.First'
+		dataType: string
+		lineageTag: 3440b872-a376-480a-90e4-8b19fbe5ea98
+		summarizeBy: none
+		sourceColumn: Name.First
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Name.Middle'
+		dataType: string
+		lineageTag: 64023a7b-e5a0-46eb-93e5-4f08cab2d077
+		summarizeBy: none
+		sourceColumn: Name.Middle
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Name.Last'
+		dataType: string
+		lineageTag: a81975fe-20f6-4acd-8b68-6ffb69af2105
+		summarizeBy: none
+		sourceColumn: Name.Last
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Name.Suffix'
+		dataType: string
+		lineageTag: a1fbaa4c-cacd-49f0-8180-f66d2ed4d159
+		summarizeBy: none
+		sourceColumn: Name.Suffix
+
+		annotation SummarizationSetBy = Automatic
+
+	column Skills
+		dataType: string
+		lineageTag: 3173767b-9d92-4e2e-a3f4-bfb7adebc42f
+		summarizeBy: none
+		sourceColumn: Skills
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Addr.Type'
+		dataType: string
+		lineageTag: 57bb3d1b-0780-4913-bbdd-ed66bba653ed
+		summarizeBy: none
+		sourceColumn: Addr.Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Addr.Loc.CountryRegion'
+		dataType: string
+		lineageTag: a241a350-fc76-4aad-93f7-246ae11dc85a
+		summarizeBy: none
+		sourceColumn: Addr.Loc.CountryRegion
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Addr.Loc.State'
+		dataType: string
+		lineageTag: 439cb64c-1b5e-4057-8dea-ee74993debf1
+		summarizeBy: none
+		sourceColumn: Addr.Loc.State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Addr.Loc.City'
+		dataType: string
+		lineageTag: 539e0d7b-291a-4714-92d7-5128678859c5
+		summarizeBy: none
+		sourceColumn: Addr.Loc.City
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Addr.PostalCode'
+		dataType: string
+		lineageTag: 48a3dff2-4bb1-4492-9607-eaea1cf4d83e
+		summarizeBy: none
+		sourceColumn: Addr.PostalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column EMail
+		dataType: string
+		lineageTag: 15fcaa12-e0c4-4f7b-8a00-a45058220c4a
+		summarizeBy: none
+		sourceColumn: EMail
+
+		annotation SummarizationSetBy = Automatic
+
+	column WebSite
+		dataType: string
+		lineageTag: 3b807a25-c8fb-4bce-a051-5f44c549f890
+		summarizeBy: none
+		sourceColumn: WebSite
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 24fe1e69-65b6-4ca5-9ed6-e17710cc4501
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		variation Variation
+			isDefault
+			relationship: 22f7f174-272f-4c0d-9578-7cbc38e3fdc2
+			defaultHierarchy: LocalDateTable_6bcd15c1-d352-41c8-81ed-4394c80afd0b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'HumanResources vJobCandidate' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("localhost\SQLEXPRESS"),
+				    AdventureWorks2019 = Source{[Name="AdventureWorks2019"]}[Data],
+				    HumanResources_vJobCandidate = AdventureWorks2019{[Schema="HumanResources",Item="vJobCandidate"]}[Data]
+				in
+				    HumanResources_vJobCandidate
+
+	annotation PBI_ResultType = Table
+
