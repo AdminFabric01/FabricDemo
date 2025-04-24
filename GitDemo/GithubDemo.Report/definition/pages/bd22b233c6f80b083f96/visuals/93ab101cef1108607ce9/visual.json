@@ -1,0 +1,124 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "name": "93ab101cef1108607ce9",
+  "position": {
+    "x": 10,
+    "y": 0,
+    "z": 0,
+    "height": 280,
+    "width": 280,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "HumanResources vJobCandidateEmployment"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Emp.EndDate"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Year"
+                }
+              },
+              "queryRef": "HumanResources vJobCandidateEmployment.Emp.EndDate.Variation.Date Hierarchy.Year",
+              "nativeQueryRef": "Emp.EndDate Year"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "HumanResources vJobCandidateEmployment"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Emp.EndDate"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Quarter"
+                }
+              },
+              "queryRef": "HumanResources vJobCandidateEmployment.Emp.EndDate.Variation.Date Hierarchy.Quarter",
+              "nativeQueryRef": "Emp.EndDate Quarter"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "HumanResources vJobCandidateEmployment"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Emp.EndDate"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Month"
+                }
+              },
+              "queryRef": "HumanResources vJobCandidateEmployment.Emp.EndDate.Variation.Date Hierarchy.Month",
+              "nativeQueryRef": "Emp.EndDate Month"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "HumanResources vJobCandidateEmployment"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Emp.EndDate"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Day"
+                }
+              },
+              "queryRef": "HumanResources vJobCandidateEmployment.Emp.EndDate.Variation.Date Hierarchy.Day",
+              "nativeQueryRef": "Emp.EndDate Day"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
